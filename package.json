@@ -1,0 +1,28 @@
+{
+  "name": "stockbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "local": "sls invoke local -f rsi --stage=dev",
+    "deploy": "sls deploy --stage=prd",
+    "log": "sls logs -f rsi --stage=prd -t"
+  },
+  "author": "Terry Yuen",
+  "license": "MIT",
+  "dependencies": {
+    "numeral": "^2.0.6",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "rxjs": "^5.5.10",
+    "telegraf": "^3.20.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "aws-sdk": "^2.224.1",
+    "serverless": "^1.26.1",
+    "sinon": "^4.5.0",
+    "standard": "^11.0.1"
+  }
+}

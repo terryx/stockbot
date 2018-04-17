@@ -1,0 +1,27 @@
+service:
+  name: stockbot
+
+custom: ${file(./config.${opt:stage}.js)}
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  profile: ${self:custom.aws.profile}
+  stage: ${opt:stage}
+  region: ${self:custom.aws.region}
+  role: ${self:custom.aws.role}
+  description: Stock Alert
+  environment:
+    STAGE: ${opt:stage}
+
+package:
+  exclude:
+    - .git/**
+    - "**test**"
+    - .gitignore
+
+functions:
+  rsi:
+    handler: funcs/rsi.index
+    events:
+      - schedule: cron(0/5 13-21 ? * MON-FRI *)
