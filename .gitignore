@@ -60,9 +60,10 @@ typings/
 # next.js build output
 .next
 
-node_modules
+# Custom
 .DS_Store
 .serverless
 .vscode
 config.*.js
 !config.sample.js
+.npm-global

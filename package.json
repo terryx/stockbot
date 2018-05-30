@@ -4,24 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ava",
-    "local": "sls invoke local -f rsi --stage=dev",
+    "build": "rm -rf node_modules && npm install",
+    "test": "STAGE=dev ava",
+    "local": "sls invoke local -f signal --stage=dev",
+    "remote": "sls invoke -f signal --stage=prd",
     "deploy": "sls deploy --stage=prd",
-    "log": "sls logs -f rsi --stage=prd -t"
+    "log": "sls logs -f signal --stage=prd -t --startTime=1h"
   },
   "author": "Terry Yuen",
   "license": "MIT",
   "dependencies": {
-    "numeral": "^2.0.6",
     "request": "^2.85.0",
     "request-promise": "^4.2.2",
-    "rxjs": "^5.5.10",
+    "rxjs": "^6.0.0",
+    "talib": "^1.0.4",
     "telegraf": "^3.20.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
     "aws-sdk": "^2.224.1",
-    "serverless": "^1.26.1",
     "sinon": "^4.5.0",
     "standard": "^11.0.1"
   }

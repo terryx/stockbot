@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    container_name: stockbot
+    build: .
+    volumes:
+      - ${PWD}:/home/node
+    command: "tail -f /dev/null"

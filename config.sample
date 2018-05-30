@@ -1,0 +1,13 @@
+module.exports = () => ({
+  telegram: {
+    token: '@bot_token',
+    channel: '@channel_name'
+  },
+  iextrading: {
+    symbols: ['aapl', 'fb']
+  },
+  aws: {
+    region: '',
+    role: ''
+  }
+})

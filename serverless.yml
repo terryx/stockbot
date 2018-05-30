@@ -6,7 +6,6 @@ custom: ${file(./config.${opt:stage}.js)}
 provider:
   name: aws
   runtime: nodejs8.10
-  profile: ${self:custom.aws.profile}
   stage: ${opt:stage}
   region: ${self:custom.aws.region}
   role: ${self:custom.aws.role}
@@ -21,7 +20,7 @@ package:
     - .gitignore
 
 functions:
-  rsi:
-    handler: funcs/rsi.index
+  signal:
+    handler: funcs/signal.index
     events:
-      - schedule: cron(0/5 13-21 ? * MON-FRI *)
+      - schedule: cron(0/5 13-22 ? * MON-FRI *)

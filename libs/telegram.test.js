@@ -1,6 +1,6 @@
 const test = require('ava')
 const sinon = require('sinon')
-const { of } = require('rxjs/observable/of')
+const { of } = require('rxjs')
 const { map } = require('rxjs/operators')
 const Telegram = require('./telegram')
 
