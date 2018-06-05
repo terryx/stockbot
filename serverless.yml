@@ -23,4 +23,4 @@ functions:
   signal:
     handler: funcs/signal.index
     events:
-      - schedule: cron(0/5 13-22 ? * MON-FRI *)
+      - schedule: cron(0/5 13-20 ? * MON-FRI *)
